@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 🔹 Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* 🔹 Neon Animated Background */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #000000, #0a0a33, #330a50, #090979, #000000);
+    background-size: 300% 300%;
+    animation: neonBg 8s infinite linear alternate;
+    z-index: -1;
+}
+
+/* 🔹 Background Animation */
+@keyframes neonBg {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* 🔹 Navbar */
+.nav {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid #00ffff;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    box-shadow: 0 0 10px #00ffff, 0 0 40px #ff00ff;
+    border-radius: 50px;
+    z-index: 100;
+}
+
+/* 🔹 Logo */
+.nav__logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* 🔹 Navigation Links */
+.nav__links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav__links li {
+    display: inline-block;
+}
+
+.nav__links a {
+    text-decoration: none;
+    color: #00ffff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.nav__links a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* 🔹 Hamburger Menu (Mobile) */
+.nav__hamburger {
+    display: none;
+}
+
+.btn {
+    color: #00ffff;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px #00ffff;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    color: #ff00ff;
+    border: 1px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.nav__login1{
+    list-style: none;
+}
+
+.btn--login2{
+    display: none;
+}
+/* 🔹 Hero Text */
+.hero__content{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 100px;
+   
+}
+
+.hero__content h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+.hero__content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* 🔹 Call to Action Button */
+.cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0ff, 0 0 40px #00f;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background: #0ff;
+    color: black;
+    box-shadow: 0 0 20px #0ff, 0 0 60px #00f;
+}
+
+/* 🔹 Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero__content h1, 
+.hero__content p, 
+.cta,
+.search-bar {
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+    .nav__links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        z-index: 99;
+        border-radius: 50px;
+        opacity: 0.9;
+    }
+.btn--login1{
+    display: none;
+}
+
+.btn--login2{
+    display: flex;
+}
+    .nav__links.show-menu {
+        display: flex;
+    }
+
+    .nav__hamburger {
+        display: block;
+    }
+}
+
+
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffff;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #00ffff, 0 0 40px #ff00ff;
+    width: 80%;
+    max-width: 400px;
+}
+
+#search-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    outline: none;
+}
+
+/* 🔹 Blinking Cursor Effect */
+.cursor {
+    position: absolute;
+    right: 10px;
+    color: #00ffff;
+    font-size: 18px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .search-bar {
+        width: 90%;
+        max-width: 350px;
+    }
+    #search-input {
+        font-size: 16px;
+    }
+}
